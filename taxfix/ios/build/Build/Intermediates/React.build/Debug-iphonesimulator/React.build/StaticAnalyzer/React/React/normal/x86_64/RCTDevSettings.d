@@ -1,0 +1,22 @@
+dependencies: \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Modules/RCTDevSettings.mm \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Modules/RCTDevSettings.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridge+Private.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Modules/RCTJSCSamplingProfiler.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTJSEnvironment.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Profiler/RCTProfile.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTInspectorDevServerHelper.h

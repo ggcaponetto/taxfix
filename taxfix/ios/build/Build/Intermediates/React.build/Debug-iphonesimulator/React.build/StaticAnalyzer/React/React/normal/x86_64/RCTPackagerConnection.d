@@ -1,0 +1,29 @@
+dependencies: \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerConnection.m \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerConnection.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/../Libraries/WebSocket/RCTReconnectingWebSocket.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/../Libraries/WebSocket/RCTSRWebSocket.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/../Libraries/WebSocket/RCTWebSocketObserver.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerConnectionBridgeConfig.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerConnectionConfig.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTReloadPackagerMethod.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTPackagerClient.h \
+  /Users/giuseppecaponetto/Desktop/personal/ggcaponetto/taxfix/taxfix/node_modules/react-native/React/DevSupport/RCTSamplingProfilerPackagerMethod.h
