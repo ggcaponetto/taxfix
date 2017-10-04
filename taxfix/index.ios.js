@@ -1,3 +1,3 @@
 import { AppRegistry } from 'react-native';
-import App from './src/components/app/App';
-AppRegistry.registerComponent('taxfix', () => App);
+import MainComponent from './src/index.js';
+AppRegistry.registerComponent('taxfix', () => MainComponent);
