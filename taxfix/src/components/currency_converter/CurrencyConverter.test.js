@@ -2,7 +2,7 @@
 import renderer from 'react-test-renderer';
 
 import React from 'react';
-import App from './App';
+import CurrencyConverter from './CurrencyConverter';
 
 global.fetch = jest.fn().mockImplementation(() => Promise.resolve(
   `
@@ -11,6 +11,6 @@ global.fetch = jest.fn().mockImplementation(() => Promise.resolve(
 ));
 
 it('renders without crashing', () => {
-  const rendered = renderer.create(<App />).toJSON();
+  const rendered = renderer.create(<CurrencyConverter />).toJSON();
   expect(rendered).toBeTruthy();
 });
