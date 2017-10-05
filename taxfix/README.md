@@ -1,3 +1,20 @@
+# Taxfix assesment
+## Instructions
+
+This assesment's target is iOS (emulator).
+Assuming the enviroment has been set up (https://facebook.github.io/react-native/docs/getting-started.html)
+run the following instructions to evaluate the project in development mode.
+
+#### run in development (emulator) mode:
+- npm install
+- npm run ios
+
+#### tests:
+- npm run test
+
+#### docs:
+- npm run jsdoc
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).

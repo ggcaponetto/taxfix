@@ -1,4 +1,32 @@
-import React from 'react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: CurrencyConverter.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: CurrencyConverter.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -121,7 +149,7 @@ class Row extends React.Component {
       data.push(Object.assign({}, rate, { key: index, label: rate.currency }));
     });
     return (
-      <ModalPicker
+      &lt;ModalPicker
         style={{
           flex: 1,
           position: 'relative',
@@ -147,7 +175,7 @@ class Row extends React.Component {
           });
         }}
       >
-        <View
+        &lt;View
           style={{
             height: 40,
             alignItems: 'center',
@@ -158,25 +186,25 @@ class Row extends React.Component {
             borderColor: PRIMARY_COLOR
           }}
         >
-          <Text>
+          &lt;Text>
             {(() => {
-              if (this.state[type].rate && this.state[type].rate.currency) {
+              if (this.state[type].rate &amp;&amp; this.state[type].rate.currency) {
                 return this.state[type].rate.currency;
               }
               return 'Select currency';
             })()}
-          </Text>
-        </View>
-      </ModalPicker>
+          &lt;/Text>
+        &lt;/View>
+      &lt;/ModalPicker>
     );
   }
   render() {
     return (
-      <View style={{ flexDirection: 'row', margin: 10 }}>
-        <View
+      &lt;View style={{ flexDirection: 'row', margin: 10 }}>
+        &lt;View
           style={styles.row}
         >
-          <TextInput
+          &lt;TextInput
             textAlign="center"
             textAlignVertical="center"
             style={styles.textInput}
@@ -195,23 +223,23 @@ class Row extends React.Component {
             }}
             value={this.state.a.amount}
           />
-        </View>
-        <View
+        &lt;/View>
+        &lt;View
           style={{ flex: 1, flexDirection: 'row' }}
         >
           {this.getCurrencyDropDown('a')}
-          <View
+          &lt;View
             style={{
               height: 40,
               alignItems: 'center',
               justifyContent: 'center'
             }}
           >
-            <Text> to </Text>
-          </View>
+            &lt;Text> to &lt;/Text>
+          &lt;/View>
           {this.getCurrencyDropDown('b')}
-        </View>
-      </View>
+        &lt;/View>
+      &lt;/View>
     );
   }
 }
@@ -311,8 +339,8 @@ export default class CurrencyConverter extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Row
+      &lt;View style={styles.container}>
+        &lt;Row
           ref={(c) => {
             this.row = c;
           }}
@@ -329,27 +357,27 @@ export default class CurrencyConverter extends React.Component {
           data={this.state.data}
           {...this.props}
         />
-        <View>
-          <Text>
+        &lt;View>
+          &lt;Text>
             {this.getConversion()}
-          </Text>
-        </View>
-        <View style={{ height: 200, marginTop: 10 }}>
-          <View style={{ flexDirection: 'row' }}>
-            <TouchableOpacity
+          &lt;/Text>
+        &lt;/View>
+        &lt;View style={{ height: 200, marginTop: 10 }}>
+          &lt;View style={{ flexDirection: 'row' }}>
+            &lt;TouchableOpacity
               onPress={() => {
                 this.props.updateCurrnencyConversionHistory([]);
               }}
             >
-              <Text>Clear history</Text>
-            </TouchableOpacity>
-          </View>
-          <FlatList
+              &lt;Text>Clear history&lt;/Text>
+            &lt;/TouchableOpacity>
+          &lt;/View>
+          &lt;FlatList
             data={this.props.currencyConversionHistory}
             keyExtractor={(item, index) => index}
             renderItem={
               ({ item }) => (
-                <TouchableOpacity
+                &lt;TouchableOpacity
                   onPress={() => {
                     this.setState({
                       data: item
@@ -358,13 +386,13 @@ export default class CurrencyConverter extends React.Component {
                     });
                   }}
                 >
-                  <Text>{item.a.amount} {item.a.rate.currency} to {item.b.rate.currency}</Text>
-                </TouchableOpacity>
+                  &lt;Text>{item.a.amount} {item.a.rate.currency} to {item.b.rate.currency}&lt;/Text>
+                &lt;/TouchableOpacity>
               )
             }
           />
-        </View>
-      </View>
+        &lt;/View>
+      &lt;/View>
     );
   }
 }
@@ -378,3 +406,26 @@ CurrencyConverter.propTypes = {
   currencyConversionHistory: PropTypes.array.isRequired,
   updateCurrnencyConversionHistory: PropTypes.func.isRequired
 };
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#getCurrencyDropDown">getCurrencyDropDown</a></li><li><a href="global.html#getHistoryFromStorage">getHistoryFromStorage</a></li><li><a href="global.html#saveHistoryToStorage">saveHistoryToStorage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Thu Oct 05 2017 22:54:48 GMT+0400 (GST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
