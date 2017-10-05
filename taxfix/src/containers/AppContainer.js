@@ -5,7 +5,7 @@ import App from '../components/app/App';
 import * as Actions from '../actions/actionCreators';
 
 const mapStateToProps = state => ({
-  currencyConversionHistory: state.cartItems
+  currencyConversionHistory: state.currencyConversionHistory
 });
 
 function mapDispatchToProps(dispatch) {

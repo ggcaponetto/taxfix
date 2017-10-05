@@ -4,7 +4,9 @@ import {
   Text,
   View,
   Picker,
-  TextInput
+  TextInput,
+  FlatList,
+  TouchableOpacity
 } from 'react-native';
 import ModalPicker from 'react-native-modal-picker';
 import PropTypes from 'prop-types';
@@ -62,6 +64,9 @@ class Row extends React.Component {
       }
     };
     this.getCurrencyDropDown = this.getCurrencyDropDown.bind(this);
+  }
+  setFromHistory(data) {
+    this.setState(data);
   }
   getCurrencyDropDown(type) {
     const data = [];
@@ -164,6 +169,21 @@ class Row extends React.Component {
   }
 }
 
+// TODO docs
+// true if the conversion data should be saved to the history
+function isValidConversion(data) {
+  const amountA = data.a.amount;
+  const rateA = data.a.rate;
+  const rateB = data.b.rate;
+  const isValid = !(
+    isNaN(parseFloat(amountA)) ||
+    amountA.match(/[^$.\d]/) ||
+    !rateA ||
+    !rateB
+  );
+  return isValid;
+}
+
 export default class CurrencyConverter extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -184,6 +204,7 @@ export default class CurrencyConverter extends React.Component {
     this.getConversion();
   }
   componentDidMount() {
+    log('CurrencyConverter componentDidMount', { state: this.state, props: this.props });
     // fetch the rates once the component has been mounted
     getRates()
     .then((responseJson) => {
@@ -195,6 +216,7 @@ export default class CurrencyConverter extends React.Component {
     });
   }
 
+
   getConversion() {
     log('getConversion', this.state);
     const amountA = this.state.data.a.amount;
@@ -202,7 +224,7 @@ export default class CurrencyConverter extends React.Component {
     // const amountB = this.state.data.b.amount;
     const rateB = this.state.data.b.rate;
     try {
-      if (isNaN(parseFloat(amountA)) || amountA.match(/[^$.\d]/)) {
+      if (!isValidConversion(this.state.data)) {
         throw new Error('Not a valid amount to convert.');
       }
       const baseAmount = 1 / parseFloat(rateA.rate);
@@ -215,9 +237,22 @@ export default class CurrencyConverter extends React.Component {
       `;
     } catch (e) {
       if (!amountA || !rateA || !rateB) {
-        return 'Select your starting and target currency.';
+        return 'Select the amount, initial and target currency.';
       }
       return e.message;
+    }
+  }
+
+  updateRedux(data) {
+    if (isValidConversion(data)) {
+      log('updateRedux', data);
+      this.props.updateCurrnencyConversionHistory(
+        this.props.currencyConversionHistory.concat(
+          data
+        )
+      );
+    } else {
+      log('skipping updateRedux', data);
     }
   }
 
@@ -225,20 +260,47 @@ export default class CurrencyConverter extends React.Component {
     return (
       <View style={styles.container}>
         <Row
+          ref={(c) => {
+            this.row = c;
+          }}
           onChange={(data) => {
             log('onChange Row', data);
             this.setState({
               data
             }, () => {
               log('Updated state', data);
+              this.updateRedux(data);
             });
           }}
           rates={this.state.apiResponse.rates}
+          data={this.state.data}
+          {...this.props}
         />
         <View>
           <Text>
             {this.getConversion()}
           </Text>
+        </View>
+        <View style={{ height: 200, marginTop: 10 }}>
+          <Text>Hisotry:</Text>
+          <FlatList
+            data={this.props.currencyConversionHistory}
+            renderItem={
+              ({ item }) => (
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({
+                      data: item
+                    }, () => {
+                      this.row.setFromHistory(item);
+                    });
+                  }}
+                >
+                  <Text>{item.a.amount} {item.a.rate.currency} to {item.b.rate.currency}</Text>
+                </TouchableOpacity>
+              )
+            }
+          />
         </View>
       </View>
     );
@@ -247,5 +309,10 @@ export default class CurrencyConverter extends React.Component {
 
 Row.propTypes = {
   onChange: PropTypes.func.isRequired,
-  rates: PropTypes.array.isRequired
+  rates: PropTypes.array.isRequired,
+};
+
+CurrencyConverter.propTypes = {
+  currencyConversionHistory: PropTypes.array.isRequired,
+  updateCurrnencyConversionHistory: PropTypes.func.isRequired
 };
