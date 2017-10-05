@@ -3,10 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^8.0.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
-    "jest-expo": "^21.0.2",
-    "react-test-renderer": "16.0.0-alpha.12",
-    "redux-devtools": "^3.4.0",
     "eslint": "^3.14.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-config-airbnb-base": "^11.0.1",
@@ -14,7 +12,10 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx": "0.0.2",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "jest-expo": "^21.0.2",
+    "react-test-renderer": "16.0.0-alpha.12",
+    "redux-devtools": "^3.4.0"
   },
   "scripts": {
     "start": "react-native start",
@@ -26,9 +27,11 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
     "react-native": "^0.48.4",
-    "prop-types": "^15.5.10",
+    "react-native-dropdown": "git+https://github.com/g6ling/react-native-dropdown.git",
+    "react-native-modal-picker": "0.0.16",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
