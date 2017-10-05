@@ -4,6 +4,7 @@
 This assesment's target is iOS (emulator).
 Assuming the enviroment has been set up (https://facebook.github.io/react-native/docs/getting-started.html)
 run the following instructions to evaluate the project in development mode.
+Relevant libs used: redux.
 
 #### run in development (emulator) mode:
 - npm install
