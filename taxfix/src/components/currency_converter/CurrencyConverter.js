@@ -6,7 +6,8 @@ import {
   Picker,
   TextInput,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  AsyncStorage
 } from 'react-native';
 import ModalPicker from 'react-native-modal-picker';
 import PropTypes from 'prop-types';
@@ -14,6 +15,7 @@ import PropTypes from 'prop-types';
 import log from '../../util/logger';
 
 const PRIMARY_COLOR = '#BDBDC1';
+const STORAGE_KEY_HISTORY = '@currencyConversionHistory';
 
 const styles = StyleSheet.create({
   container: {
@@ -49,6 +51,39 @@ function getRates() {
   .catch((error) => {
     log('Error fetching the current rates', error);
   });
+}
+
+async function saveHistoryToStorage(currencyConversionHistory) {
+  try {
+    await AsyncStorage.setItem(
+      STORAGE_KEY_HISTORY,
+      JSON.stringify(currencyConversionHistory, null, 4)
+    );
+    log('Saved history to local storage.', { history: currencyConversionHistory });
+  } catch (error) {
+    // Error saving data
+    log('Could not save to local storage.', { currencyConversionHistory, error });
+  }
+}
+
+async function getHistoryFromStorage() {
+  try {
+    const value = await AsyncStorage.getItem(STORAGE_KEY_HISTORY);
+    if (value !== null) {
+      // We have data!!
+      try {
+        const parsed = JSON.parse(value);
+        log('Restored history from local storage.', { history: parsed });
+        return parsed;
+      } catch (e) {
+        throw new Error('No data retrieved');
+      }
+    }
+    return [];
+  } catch (error) {
+    log('Could not save to local storage.', { key: STORAGE_KEY_HISTORY, error });
+    return [];
+  }
 }
 
 class Row extends React.Component {
@@ -214,6 +249,12 @@ export default class CurrencyConverter extends React.Component {
         log('Updated state', this.state);
       });
     });
+
+    getHistoryFromStorage()
+    .then((currencyConversionHistory) => {
+      this.props.updateCurrnencyConversionHistory(currencyConversionHistory);
+    })
+    .catch();
   }
 
 
@@ -246,11 +287,9 @@ export default class CurrencyConverter extends React.Component {
   updateRedux(data) {
     if (isValidConversion(data)) {
       log('updateRedux', data);
-      this.props.updateCurrnencyConversionHistory(
-        this.props.currencyConversionHistory.concat(
-          data
-        )
-      );
+      const newHistory = this.props.currencyConversionHistory.concat(data);
+      this.props.updateCurrnencyConversionHistory(newHistory);
+      saveHistoryToStorage(newHistory);
     } else {
       log('skipping updateRedux', data);
     }
@@ -282,9 +321,18 @@ export default class CurrencyConverter extends React.Component {
           </Text>
         </View>
         <View style={{ height: 200, marginTop: 10 }}>
-          <Text>Hisotry:</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <TouchableOpacity
+              onPress={() => {
+                this.props.updateCurrnencyConversionHistory([]);
+              }}
+            >
+              <Text>Clear history</Text>
+            </TouchableOpacity>
+          </View>
           <FlatList
             data={this.props.currencyConversionHistory}
+            keyExtractor={(item, index) => index}
             renderItem={
               ({ item }) => (
                 <TouchableOpacity
